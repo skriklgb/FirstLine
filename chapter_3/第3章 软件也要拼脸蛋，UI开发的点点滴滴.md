@@ -1,0 +1,30 @@
+第3章 软件也要拼脸蛋，UI开发的点点滴滴
+3.1 该如何编写程序界面
+3.2 常见控件的使用方法
+	3.2.1 TextView
+	3.2.2 Button
+	3.2.3 EditText
+	3.2.4 ImageView
+	3.2.5 ProgressBar
+	3.2.6 AlertDialog
+	3.2.7 ProgressDialog
+3.3 详解四种基本布局
+	3.3.1 LinearLayout
+	3.3.2 RelativeLayout
+	3.3.3 FrameLayout
+	3.3.4 TableLayout
+3.4 系统控件不够用？创建自定义控件
+	3.4.1 引入布局
+	3.4.2 创建自定义控件
+3.5 最常用和最难用的控件——ListView
+	3.5.1 ListView的简单用法
+	3.5.2 定制ListView的界面
+	3.5.3 提升ListView的运行效率
+	3.5.4 ListView的点击事件
+3.6 单位和尺寸
+	3.6.1 px和pt的窘境
+	3.6.2 dp和sp来帮忙
+3.7 编写界面的最佳实践
+	3.7.1 制作Nine-Patch图片
+	3.7.2 编写精美的聊天界面
+3.8 小结与点评
