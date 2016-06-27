@@ -10,8 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="skrik.lgb.chapter_1.MainActivity">
 
+    <!--TextView，这是Android 系统提供的一个控件，用于在布局中显示文字的-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="@string/hello_world"/>
+    <!--Android不推荐在程序中对字符串进行硬编码，一般是把字符串定义在res/values/strings.xml 里，-->
+
 </RelativeLayout>

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Chapter_1</string>
+    <string name="app_name">第一章</string>
+    <string name="hello_world">Hello World!</string>
 </resources>
