@@ -14,6 +14,7 @@ import skrik.lgb.chapter_2.R;
 public class FirstActivity extends Activity{
 
     private Button mBt_first;
+    private Button mBt_sec;
 
     @Override
     //项目中的任何活动都应该重写Activity 的onCreate()方法，
@@ -36,8 +37,19 @@ public class FirstActivity extends Activity{
                 Toast.makeText(FirstActivity.this,"the button1 is onclick",Toast.LENGTH_SHORT).show();
             }
         });
+
+//        2.2.7 销毁一个活动
+        mBt_sec = (Button) findViewById(R.id.bt_sec);
+        mBt_sec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
+
+//    2.2.6 在活动中使用Menu，只在点击menu按键的时候才会显示
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main,menu);
