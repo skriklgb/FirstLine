@@ -17,6 +17,7 @@ public class FirstActivity extends Activity{
     private Button mBt_first;
     private Button mBt_sec;
     private Button mBt_intent;
+    private Button mBt_third;
 
     @Override
     //项目中的任何活动都应该重写Activity 的onCreate()方法，
@@ -56,6 +57,17 @@ public class FirstActivity extends Activity{
             public void onClick(View v) {
                 Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        //2.3.2　使用隐式Intent
+        mBt_third = (Button) findViewById(R.id.bt_third);
+        mBt_third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent intent = new Intent("skrik.lgb.chapter_2.ACTION_THIRD");
+                    intent.addCategory("skrik.lgb.chapter_2.MY_CATGORY");
+                    startActivity(intent);
             }
         });
     }

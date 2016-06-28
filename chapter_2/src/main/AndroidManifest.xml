@@ -17,6 +17,13 @@
         </activity>
         <activity android:name=".activity.SecondActivity">
         </activity>
+        <activity android:name=".activity.ThirdActivity">
+            <intent-filter>
+                <action android:name="skrik.lgb.chapter_2.ACTION_THIRD"/>
+                <category android:name="android.intent.category.DEFAULT"/><!--默认的category， 在调用startActivity()方法的时候会自动将这个category 添加到Intent 中。-->
+                <category android:name="skrik.lgb.chapter_2.MY_CATGORY"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
