@@ -2,6 +2,7 @@ package skrik.lgb.chapter_2.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +19,8 @@ public class FirstActivity extends Activity{
     private Button mBt_sec;
     private Button mBt_intent;
     private Button mBt_third;
+    private Button mBt_four;
+    private Button mBt_dial;
 
     @Override
     //项目中的任何活动都应该重写Activity 的onCreate()方法，
@@ -68,6 +71,28 @@ public class FirstActivity extends Activity{
                     Intent intent = new Intent("skrik.lgb.chapter_2.ACTION_THIRD");
                     intent.addCategory("skrik.lgb.chapter_2.MY_CATGORY");
                     startActivity(intent);
+            }
+        });
+
+        //2.3.3　更多隐式Intent的用法-调用系统浏览器打开一个网页
+        mBt_four = (Button) findViewById(R.id.bt_four);
+        mBt_four.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://baidu.com"));
+                startActivity(intent);
+            }
+        });
+
+        //2.3.3　更多隐式Intent的用法-调用系统拨号盘
+        mBt_dial = (Button) findViewById(R.id.bt_dial);
+        mBt_dial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:10086"));
+                startActivity(intent);
             }
         });
     }

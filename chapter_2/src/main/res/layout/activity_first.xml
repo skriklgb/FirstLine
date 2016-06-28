@@ -26,4 +26,16 @@
         android:text="隐式intent1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_four"
+        android:text="调用系统浏览器打开一个网页"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_dial"
+        android:text="调用系统拨号盘"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
