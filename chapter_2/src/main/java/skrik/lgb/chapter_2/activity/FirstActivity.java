@@ -22,6 +22,7 @@ public class FirstActivity extends Activity{
     private Button mBt_four;
     private Button mBt_dial;
     private Button mBt_put;
+    private Button mBt_setResult;
 
     @Override
     //项目中的任何活动都应该重写Activity 的onCreate()方法，
@@ -108,15 +109,49 @@ public class FirstActivity extends Activity{
                 startActivity(intent);
             }
         });
+
+        //2.3.5　返回数据给上一个活动
+        mBt_setResult = (Button) findViewById(R.id.bt_setResult);
+        mBt_setResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this,setResultActivity.class);
+                startActivityForResult(intent,1);  //第一个参数还是Intent，第二个参数是请求码，用于在之后的回调中判断数据的来源请求码只要是一个唯一值就可以了，这里传入了1
+
+            }
+        });
+
+
+
     }
 
+    /**
+     * 由于我们是使用startActivityForResult()方法来启动SecondActivity 的，在setResultActivity被销毁之后会回调上一个活动的onActivityResult()方法，
+     * 因此我们需要在FirstActivity 中重写这个方法来得到返回的数据，
+     * @param requestCode  我们在启动活动时传入的请求码。
+     *                     由于在一个活动中有可能调用startActivityForResult()方法去启动很多不同的活动，每一个活动返回的数据都会回调到onActivityResult()这个方法中，因此
+     *                     我们首先要做的就是通过检查requestCode 的值来判断数据来源.
+     * @param resultCode   我们在返回数据时传入的处理结果
+     *       确定数据是从SecondActivity 返回的之后，我们再通过resultCode 的值来判断处理结果是否成功。
+     * @param data    携带着返回数据的Intent
+     *                最后从data 中取值并打印出来，这样就完成了向上一个活动返回数据的工作。
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+             case 1:
+                        if (resultCode == RESULT_OK){
+                                String returnData = data.getStringExtra("data_return");
+                               Toast.makeText(FirstActivity.this,returnData,Toast.LENGTH_SHORT).show();
+                        }
+                 break;
 
+             default:
+                 break;
+             }
+    }
 
-
-
-
-
-//    2.2.6 在活动中使用Menu，只在点击menu按键的时候才会显示
+    //    2.2.6 在活动中使用Menu，只在点击menu按键的时候才会显示
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main,menu);

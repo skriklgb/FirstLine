@@ -44,4 +44,11 @@
         android:text="intent传递数据putExtra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/bt_setResult"
+        android:text="intent返回数据给上一个活动"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

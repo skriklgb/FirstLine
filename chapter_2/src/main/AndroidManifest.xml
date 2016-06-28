@@ -28,6 +28,8 @@
         </activity>
         <activity android:name=".activity.putExtraActivity">
         </activity>
+        <activity android:name=".activity.setResultActivity">
+        </activity>
     </application>
 
 </manifest>
