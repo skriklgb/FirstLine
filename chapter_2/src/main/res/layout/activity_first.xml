@@ -38,4 +38,10 @@
         android:text="调用系统拨号盘"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_put"
+        android:text="intent传递数据putExtra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

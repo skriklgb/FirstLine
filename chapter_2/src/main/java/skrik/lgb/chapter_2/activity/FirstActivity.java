@@ -21,6 +21,7 @@ public class FirstActivity extends Activity{
     private Button mBt_third;
     private Button mBt_four;
     private Button mBt_dial;
+    private Button mBt_put;
 
     @Override
     //项目中的任何活动都应该重写Activity 的onCreate()方法，
@@ -95,7 +96,24 @@ public class FirstActivity extends Activity{
                 startActivity(intent);
             }
         });
+
+        //2.3.4　向下一个活动传递数据
+        mBt_put = (Button) findViewById(R.id.bt_put);
+        mBt_put.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String data = "向下一个活动传递数据";
+                Intent intent = new Intent(FirstActivity.this,putExtraActivity.class);
+                intent.putExtra("Extra_data",data);  //putExtra()方法接收两个参数，第一个参数是键，用于后面从Intent中取值，第二个参数才是真正要传递的数据。
+                startActivity(intent);
+            }
+        });
     }
+
+
+
+
+
 
 
 //    2.2.6 在活动中使用Menu，只在点击menu按键的时候才会显示
