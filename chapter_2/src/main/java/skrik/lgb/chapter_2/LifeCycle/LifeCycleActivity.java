@@ -20,6 +20,10 @@ public class LifeCycleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG,"oncreate");
         setContentView(R.layout.activity_life_cycle);
+        if (savedInstanceState != null){
+            String tempdata = savedInstanceState.getString("data_key");
+            Log.d(TAG,tempdata);
+        }
 
        mStart_normal_activity   =  (Button) findViewById(R.id.start_normal_activity);
         mStart_dialog_activity = (Button) findViewById(R.id.start_dialog_activity);
@@ -76,5 +80,12 @@ public class LifeCycleActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         Log.d(TAG,"onrestart");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String tempData = "Something you just typed";
+        outState.putString("data_key",tempData);
     }
 }
