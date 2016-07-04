@@ -26,16 +26,20 @@
         <activity android:name=".activity.setResultActivity">
         </activity>
         <activity android:name=".LifeCycle.LifeCycleActivity">
+
+        </activity>
+        <activity android:name=".LifeCycle.NormalActivity">
+        </activity>
+        <activity
+            android:name=".LifeCycle.DialogActivity"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+        <activity android:name=".LaunchMode.standardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".LifeCycle.NormalActivity">
-        </activity>
-        <activity android:name=".LifeCycle.DialogActivity"
-            android:theme="@android:style/Theme.Dialog">
         </activity>
     </application>
 
