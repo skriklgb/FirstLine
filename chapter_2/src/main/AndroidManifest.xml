@@ -26,7 +26,6 @@
         <activity android:name=".activity.setResultActivity">
         </activity>
         <activity android:name=".LifeCycle.LifeCycleActivity">
-
         </activity>
         <activity android:name=".LifeCycle.NormalActivity">
         </activity>
@@ -35,11 +34,17 @@
             android:theme="@android:style/Theme.Dialog">
         </activity>
         <activity android:name=".LaunchMode.standardActivity">
+        </activity>
+        <activity
+            android:name=".LaunchMode.singleTopActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".LaunchMode.SingleTop_secondActivity">
         </activity>
     </application>
 
