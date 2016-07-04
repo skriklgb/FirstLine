@@ -36,15 +36,15 @@
         <activity android:name=".LaunchMode.standardActivity">
         </activity>
         <activity
-            android:name=".LaunchMode.singleTopActivity"
-            android:launchMode="singleTop">
+            android:name=".LaunchMode.FirstActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".LaunchMode.SingleTop_secondActivity">
+        <activity android:name=".LaunchMode.SecondActivity">
         </activity>
     </application>
 

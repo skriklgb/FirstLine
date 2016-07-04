@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import skrik.lgb.chapter_2.R;
 
-public class singleTopActivity extends AppCompatActivity {
+public class FirstActivity extends AppCompatActivity {
 
     private Button mBt_singleTop;
 
@@ -23,9 +23,15 @@ public class singleTopActivity extends AppCompatActivity {
         mBt_singleTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(singleTopActivity.this,SingleTop_secondActivity.class);
+                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("重新启动FirstActivity","onRestart()");
     }
 }

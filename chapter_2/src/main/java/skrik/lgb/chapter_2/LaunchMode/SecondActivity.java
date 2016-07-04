@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import skrik.lgb.chapter_2.R;
 
-public class SingleTop_secondActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
     private Button mBt_singleTop_second;
 
@@ -24,12 +24,15 @@ public class SingleTop_secondActivity extends AppCompatActivity {
         mBt_singleTop_second.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(SingleTop_secondActivity.this,singleTopActivity.class);
+                Intent intent =new Intent(SecondActivity.this,FirstActivity.class);
                 startActivity(intent);
             }
         });
+    }
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("销毁secondActivity","onDestroy() ");
     }
 }
