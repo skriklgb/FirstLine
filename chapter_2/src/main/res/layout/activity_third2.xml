@@ -16,4 +16,10 @@
         android:layout_height="wrap_content"
         android:text="第三个Activity"/>
 
+    <Button
+        android:id="@+id/bt_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击按钮直接退出程序"/>
+
 </RelativeLayout>
