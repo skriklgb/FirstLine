@@ -1,14 +1,19 @@
-package skrik.lgb.chapter_3;
+package skrik.lgb.chapter_3.widget;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class ButtonActivity extends Activity implements View.OnClickListener {
+import skrik.lgb.chapter_3.R;
+
+public class WidgetActivity extends Activity implements View.OnClickListener {
 
     private Button mBt_button;
+    private EditText mEt_edittext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +21,7 @@ public class ButtonActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.button);
 
         mBt_button = (Button) findViewById(R.id.bt_button);
+        mEt_edittext = (EditText) findViewById(R.id.et_edittext);
 
         mBt_button.setOnClickListener(this);
     }
@@ -24,7 +30,8 @@ public class ButtonActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
              case R.id.bt_button:
-                 Toast.makeText(getApplicationContext(),"点击了",Toast.LENGTH_SHORT).show();
+                 String inputdata = mEt_edittext.getText().toString();
+                 Toast.makeText(WidgetActivity.this,inputdata,Toast.LENGTH_SHORT).show();
         
                  break;
         
