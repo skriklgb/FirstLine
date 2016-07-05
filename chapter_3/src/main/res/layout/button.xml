@@ -49,4 +49,11 @@
         android:layout_height="wrap_content"
         android:text="动态地更改进度条的进度"/>
 
+
+    <Button
+        android:id="@+id/bt_button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 弹出一个对话框"/>
+
 </LinearLayout>

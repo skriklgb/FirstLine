@@ -1,7 +1,10 @@
 package skrik.lgb.chapter_3.widget;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +23,7 @@ public class WidgetActivity extends Activity implements View.OnClickListener {
     private Button mBt_button3;
     private ProgressBar mPb_pro;
     private Button mBt_button4;
+    private Button mBt_button5;
 
 
     @Override
@@ -34,11 +38,13 @@ public class WidgetActivity extends Activity implements View.OnClickListener {
         mPb_pro = (ProgressBar) findViewById(R.id.pb_pro);
         mBt_button3 = (Button) findViewById(R.id.bt_button3);
         mBt_button4 = (Button) findViewById(R.id.bt_button4);
+        mBt_button5 = (Button) findViewById(R.id.bt_button5);
 
         mBt_button.setOnClickListener(this);
         mBt_button2.setOnClickListener(this);
         mBt_button3.setOnClickListener(this);
         mBt_button4.setOnClickListener(this);
+        mBt_button5.setOnClickListener(this);
 
         
     }
@@ -67,6 +73,26 @@ public class WidgetActivity extends Activity implements View.OnClickListener {
                 progress = progress+10;
                 mPb_pro.setProgress(progress);
                 break;
+            case R.id.bt_button5:
+                AlertDialog.Builder dialog = new AlertDialog.Builder(WidgetActivity.this);
+                dialog.setTitle("this is dialog");
+                dialog.setMessage("it is very important");
+                dialog.setCancelable(false);
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("dialog","点击了OK");
+                    }
+                });
+                dialog.setNegativeButton("cancle", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("dialog","点击了cancle");
+                    }
+                });
+
+                dialog.show();
+
 
             default:
                  break;
