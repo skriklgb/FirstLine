@@ -30,4 +30,23 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher"/>
 
+    <Button
+        android:id="@+id/bt_button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击进度条消失显示"/>
+    <ProgressBar
+        android:id="@+id/pb_pro"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/bt_button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="动态地更改进度条的进度"/>
+
 </LinearLayout>
