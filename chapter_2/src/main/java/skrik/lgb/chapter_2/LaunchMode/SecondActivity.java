@@ -16,7 +16,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("未处于栈顶时会创建新的实例",this.toString());
+        Log.d("SecondActivity返回栈的id","SecondActivity返回栈的id是："+getTaskId());
         setContentView(R.layout.activity_single_top_second);
 
         mBt_singleTop_second = (Button) findViewById(R.id.bt_singleTop_second);
@@ -24,7 +24,7 @@ public class SecondActivity extends AppCompatActivity {
         mBt_singleTop_second.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(SecondActivity.this,FirstActivity.class);
+                Intent intent =new Intent(SecondActivity.this,ThirdActivity.class);
                 startActivity(intent);
             }
         });

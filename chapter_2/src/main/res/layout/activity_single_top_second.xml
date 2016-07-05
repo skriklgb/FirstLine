@@ -14,6 +14,6 @@
         android:id="@+id/bt_singleTop_second"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="未处于栈顶时会创建新的实例"/>
+        android:text="第二个Activity"/>
 
 </RelativeLayout>

@@ -16,7 +16,7 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("singleTop 模式",this.toString());
+        Log.d("FirstActivity返回栈的id","FirstActivity返回栈的id是："+getTaskId());
         setContentView(R.layout.activity_single_top);
 
         mBt_singleTop = (Button) findViewById(R.id.bt_singleTop);
