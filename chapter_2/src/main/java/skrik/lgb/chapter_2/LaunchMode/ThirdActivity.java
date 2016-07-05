@@ -1,12 +1,12 @@
 package skrik.lgb.chapter_2.LaunchMode;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import skrik.lgb.chapter_2.R;
+import skrik.lgb.chapter_2.skill.BaseActivity;
 
-public class ThirdActivity extends AppCompatActivity {
+public class ThirdActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,14 +2,14 @@ package skrik.lgb.chapter_2.LaunchMode;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import skrik.lgb.chapter_2.R;
+import skrik.lgb.chapter_2.skill.BaseActivity;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     private Button mBt_singleTop;
 
