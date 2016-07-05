@@ -2,6 +2,7 @@ package skrik.lgb.chapter_3.widget;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class WidgetActivity extends Activity implements View.OnClickListener {
     private ProgressBar mPb_pro;
     private Button mBt_button4;
     private Button mBt_button5;
+    private Button mBt_button6;
 
 
     @Override
@@ -39,12 +41,14 @@ public class WidgetActivity extends Activity implements View.OnClickListener {
         mBt_button3 = (Button) findViewById(R.id.bt_button3);
         mBt_button4 = (Button) findViewById(R.id.bt_button4);
         mBt_button5 = (Button) findViewById(R.id.bt_button5);
+        mBt_button6 = (Button) findViewById(R.id.bt_button6);
 
         mBt_button.setOnClickListener(this);
         mBt_button2.setOnClickListener(this);
         mBt_button3.setOnClickListener(this);
         mBt_button4.setOnClickListener(this);
         mBt_button5.setOnClickListener(this);
+        mBt_button6.setOnClickListener(this);
 
         
     }
@@ -90,8 +94,14 @@ public class WidgetActivity extends Activity implements View.OnClickListener {
                         Log.d("dialog","点击了cancle");
                     }
                 });
-
                 dialog.show();
+                break;
+            case R.id.bt_button6:
+                ProgressDialog progressDialog = new ProgressDialog(WidgetActivity.this);
+                progressDialog.setTitle("this is progressDialog");
+                progressDialog.setMessage("Loading......");
+                progressDialog.setCancelable(true);
+                progressDialog.show();
 
 
             default:
