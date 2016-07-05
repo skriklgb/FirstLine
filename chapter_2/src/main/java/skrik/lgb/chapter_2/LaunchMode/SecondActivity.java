@@ -1,5 +1,6 @@
 package skrik.lgb.chapter_2.LaunchMode;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,13 @@ public class SecondActivity extends BaseActivity {
 
     private Button mBt_singleTop_second;
 
+    public static void actionStart(Context context, String data1, String data2) {
+        Intent intent = new Intent(context, SecondActivity.class);
+        intent.putExtra("param1", data1);
+        intent.putExtra("param2", data2);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +32,11 @@ public class SecondActivity extends BaseActivity {
         mBt_singleTop_second.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(SecondActivity.this,ThirdActivity.class);
-                startActivity(intent);
+                SecondActivity.actionStart(getApplicationContext(),"data1","data2");
             }
         });
     }
+
 
     @Override
     protected void onDestroy() {
