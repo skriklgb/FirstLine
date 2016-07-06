@@ -9,11 +9,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".widget.WidgetActivity">
-
         </activity>
         <activity android:name=".layout.LinearLayoutActivity">
         </activity>
         <activity android:name=".custormwidget.CustomViewsActivity">
+
+        </activity>
+        <activity android:name=".ListView.ListViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
