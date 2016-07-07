@@ -14,22 +14,25 @@ import skrik.lgb.chapter_3.R;
 
 public class FruitAdapter extends ArrayAdapter<Fruit>{
     private int mResourceId;
-
     public FruitAdapter(Context context, int resource, List<Fruit> objects) {
         super(context, resource, objects);
-
        mResourceId =  resource;
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Fruit fruit = getItem(position);  // 获取当前项的Fruit实例
-        View view = LayoutInflater.from(getContext()).inflate(mResourceId,null);
+        View view;
+
+        if (convertView == null) {
+            view = LayoutInflater.from(getContext()).inflate(mResourceId,null);
+
+        } else {
+            view = convertView;
+        }
         ImageView fruit_image = (ImageView) view.findViewById(R.id.fruit_image);
         TextView fruit_name = (TextView) view.findViewById(R.id.fruit_name);
         fruit_image.setImageResource(fruit.getImageId());
         fruit_name.setText(fruit.getName());
         return view;
-
     }
 }
