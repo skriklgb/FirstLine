@@ -15,9 +15,11 @@
         <activity android:name=".custormwidget.CustomViewsActivity">
         </activity>
         <activity android:name=".ListView.ListViewActivity">
-
         </activity>
         <activity android:name=".ListView.MyListviewActivity">
+
+        </activity>
+        <activity android:name=".ChatView.ChatViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
