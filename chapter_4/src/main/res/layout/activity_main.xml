@@ -6,25 +6,11 @@
 
     <fragment
         android:id="@+id/fragment_left"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:name="skrik.lgb.chapter_4.LeftFragment"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
     </fragment>
 
-    <FrameLayout
-        android:id="@+id/right_layout"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-        <fragment
-            android:id="@+id/fragment_right"
-            android:name="skrik.lgb.chapter_4.RightFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-        </fragment>
-
-    </FrameLayout>
     
 </LinearLayout>
