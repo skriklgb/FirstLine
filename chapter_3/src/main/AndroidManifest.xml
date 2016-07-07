@@ -13,9 +13,11 @@
         <activity android:name=".layout.LinearLayoutActivity">
         </activity>
         <activity android:name=".custormwidget.CustomViewsActivity">
-
         </activity>
         <activity android:name=".ListView.ListViewActivity">
+
+        </activity>
+        <activity android:name=".ListView.MyListviewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
