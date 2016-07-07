@@ -2,7 +2,10 @@ package skrik.lgb.chapter_3.ListView;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,14 @@ public class MyListviewActivity extends AppCompatActivity {
         mLv_fruitmy = (ListView) findViewById(R.id.lv_fruitmy);
 
         mLv_fruitmy.setAdapter(fruitAdapter);
+
+        mLv_fruitmy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Fruit fruit = mFruitList.get(position);
+                Toast.makeText(MyListviewActivity.this,fruit.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
