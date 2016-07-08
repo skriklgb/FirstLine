@@ -24,8 +24,6 @@ public class MainActivity extends Activity {
         mIntentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         mNetvorkChangeReceive = new NetvorkChangeReceive();
         registerReceiver(mNetvorkChangeReceive,mIntentFilter);
-
-
     }
 
     @Override
