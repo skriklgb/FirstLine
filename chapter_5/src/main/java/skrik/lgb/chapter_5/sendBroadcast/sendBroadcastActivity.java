@@ -23,7 +23,8 @@ public class sendBroadcastActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent("android.intent.action.MY_BROADCAST");
-                sendBroadcast(intent);
+//                sendBroadcast(intent);  //发送标准广播
+                    sendOrderedBroadcast(intent,null);//发送有序广播,可截断
             }
         });
     }

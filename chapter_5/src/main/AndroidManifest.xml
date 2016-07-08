@@ -28,8 +28,9 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+
         <receiver android:name=".sendBroadcast.MyBroadcastReceiver">
-            <intent-filter>
+            <intent-filter android:priority="100">
                 <action android:name="android.intent.action.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
