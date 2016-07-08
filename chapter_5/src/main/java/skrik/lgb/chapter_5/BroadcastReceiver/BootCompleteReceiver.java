@@ -1,4 +1,4 @@
-package skrik.lgb.chapter_5;
+package skrik.lgb.chapter_5.BroadcastReceiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

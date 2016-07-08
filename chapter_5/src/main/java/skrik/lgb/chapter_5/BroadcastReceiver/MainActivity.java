@@ -1,4 +1,4 @@
-package skrik.lgb.chapter_5;
+package skrik.lgb.chapter_5.BroadcastReceiver;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -9,6 +9,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import skrik.lgb.chapter_5.R;
 
 public class MainActivity extends Activity {
 

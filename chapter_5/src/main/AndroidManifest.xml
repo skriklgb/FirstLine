@@ -11,7 +11,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".BroadcastReceiver.MainActivity">
+
+        </activity>
+        <activity android:name=".sendBroadcast.sendBroadcastActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -19,11 +22,19 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".BootCompleteReceiver">
+
+        <receiver android:name=".BroadcastReceiver.BootCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+        <receiver android:name=".sendBroadcast.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>
