@@ -1,9 +1,11 @@
 package skrik.lgb.chapter_6.sqlite;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,6 +18,7 @@ public class sqliteActivity extends AppCompatActivity {
     private Button mAdd_data;
     private Button mUpdate_data;
     private Button mDelete_data;
+    private Button mQuery_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class sqliteActivity extends AppCompatActivity {
         mAdd_data = (Button) findViewById(R.id.add_data);
         mUpdate_data = (Button) findViewById(R.id.update_data);
         mDelete_data = (Button) findViewById(R.id.delete_data);
+        mQuery_data = (Button) findViewById(R.id.query_data);
 
         mCreate_database.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +76,30 @@ public class sqliteActivity extends AppCompatActivity {
                 SQLiteDatabase db = mMyDatabaseHelper.getWritableDatabase();
                 db.delete("Book","pages>?",new String[]{"500"});
 
+            }
+        });
+
+        mQuery_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db = mMyDatabaseHelper.getWritableDatabase();
+                Cursor cursor = db.query("Book", null, null, null, null, null, null);
+                if (cursor.moveToFirst()){
+                    do {
+                        // 遍历Cursor对象，取出数据并打印
+                        String name = cursor.getString(cursor.getColumnIndex("name"));
+                        String author = cursor.getString(cursor.getColumnIndex("author"));
+                        int pages = cursor.getInt(cursor.getColumnIndex("pages"));
+                        double price = cursor.getDouble(cursor.getColumnIndex("price"));
+
+                        Log.d("MainActivity", "book name is " + name);
+                        Log.d("MainActivity", "book author is " + author);
+                        Log.d("MainActivity", "book pages is " + pages);
+                        Log.d("MainActivity", "book price is " + price);
+
+                    }while (cursor.moveToNext());
+                }
+                cursor.close();
             }
         });
 
