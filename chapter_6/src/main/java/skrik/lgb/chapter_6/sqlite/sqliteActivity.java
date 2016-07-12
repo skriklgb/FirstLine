@@ -15,6 +15,7 @@ public class sqliteActivity extends AppCompatActivity {
     private Button mCreate_database;
     private Button mAdd_data;
     private Button mUpdate_data;
+    private Button mDelete_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class sqliteActivity extends AppCompatActivity {
         mCreate_database = (Button) findViewById(R.id.create_database);
         mAdd_data = (Button) findViewById(R.id.add_data);
         mUpdate_data = (Button) findViewById(R.id.update_data);
+        mDelete_data = (Button) findViewById(R.id.delete_data);
 
         mCreate_database.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,5 +65,15 @@ public class sqliteActivity extends AppCompatActivity {
 
             }
         });
+
+        mDelete_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db = mMyDatabaseHelper.getWritableDatabase();
+                db.delete("Book","pages>?",new String[]{"500"});
+
+            }
+        });
+
     }
 }
