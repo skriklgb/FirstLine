@@ -14,6 +14,7 @@ public class sqliteActivity extends AppCompatActivity {
     private MyDatabaseHelper mMyDatabaseHelper;
     private Button mCreate_database;
     private Button mAdd_data;
+    private Button mUpdate_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class sqliteActivity extends AppCompatActivity {
         mMyDatabaseHelper = new MyDatabaseHelper(this, "BookStore.db", null, 3);
         mCreate_database = (Button) findViewById(R.id.create_database);
         mAdd_data = (Button) findViewById(R.id.add_data);
+        mUpdate_data = (Button) findViewById(R.id.update_data);
 
         mCreate_database.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,17 @@ public class sqliteActivity extends AppCompatActivity {
                 values.put("pages", 510);
                 values.put("price", 19.95);
                 db.insert("Book", null, values); // 插入第二条数据
+            }
+        });
+        
+        mUpdate_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db = mMyDatabaseHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put("price",10.99);
+                db.update("Book",values,"name=?",new String[]{"The Da Vinci Code"});
+
             }
         });
     }
