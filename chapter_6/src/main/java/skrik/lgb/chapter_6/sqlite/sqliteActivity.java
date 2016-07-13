@@ -26,7 +26,7 @@ public class sqliteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sqlite);
 
-        mMyDatabaseHelper = new MyDatabaseHelper(this, "BookStore.db", null, 3);
+        mMyDatabaseHelper = new MyDatabaseHelper(this, "BookStore.db", null, 2);
         mCreate_database = (Button) findViewById(R.id.create_database);
         mAdd_data = (Button) findViewById(R.id.add_data);
         mUpdate_data = (Button) findViewById(R.id.update_data);

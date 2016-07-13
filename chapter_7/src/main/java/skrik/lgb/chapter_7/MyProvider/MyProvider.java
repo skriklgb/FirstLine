@@ -23,8 +23,6 @@ public class MyProvider extends ContentProvider {
         uriMatcher.addURI("com.example.app.provider ", "table2/#", TABLE2_ITEM);
     }
 
-
-
     @Override
     public boolean onCreate() {
         return false;
