@@ -2,6 +2,10 @@
 <manifest package="skrik.lgb.chapter_8"
           xmlns:android="http://schemas.android.com/apk/res/android">
 <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Notification.MainActivity">
+
+        </activity>
+        <activity android:name=".Notification.NotificationActivity">
+        </activity>
+
+        <activity android:name=".Message.MsgActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".Notification.NotificationActivity">
         </activity>
     </application>
 
