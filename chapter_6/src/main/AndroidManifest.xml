@@ -24,8 +24,9 @@
         <provider
             android:authorities="com.example.databasetest.provider"
             android:name="skrik.lgb.chapter_6.sqlite.DatabaseProvider">
-            
         </provider>
+
+
     </application>
 
 </manifest>
