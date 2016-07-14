@@ -31,6 +31,7 @@ public class MsgActivity extends Activity {
 
         receiveFilter = new IntentFilter();
         receiveFilter.addAction("android.provider.Telephony.SMS_RECEIVED");
+        receiveFilter.setPriority(100);
         messageReceiver = new MessageReceiver();
         registerReceiver(messageReceiver, receiveFilter);
     }
@@ -57,6 +58,7 @@ public class MsgActivity extends Activity {
             }
             mSender.setText(address);
             mContent.setText(fullMessage);
+            abortBroadcast();
         }
     }
 }
