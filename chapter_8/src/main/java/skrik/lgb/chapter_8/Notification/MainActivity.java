@@ -32,6 +32,19 @@ public class MainActivity extends Activity implements View.OnClickListener{
                  Intent intent =new Intent(this,NotificationActivity.class);
                  PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                  notification.setLatestEventInfo(this, "This is content title","This is content text", pendingIntent);
+
+
+//                 Uri soundUri = Uri.fromFile(new File("/system/media/audio/ringtones/Basic_tone.ogg"));
+//                 notification.sound = soundUri;
+//                 long[] vibrates = {0, 1000, 1000, 1000};
+//                 notification.vibrate = vibrates;
+//                 notification.ledARGB = Color.GREEN;
+//                 notification.ledOnMS = 1000;
+//                 notification.ledOffMS = 1000;
+//                 notification.flags = Notification.FLAG_SHOW_LIGHTS;
+
+                 notification.defaults = Notification.DEFAULT_ALL;
+
                  manager.notify(1,notification);
 
                  break;
