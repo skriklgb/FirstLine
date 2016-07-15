@@ -33,6 +33,10 @@
         </activity>
 
         <activity android:name=".Media.PlayAudioActivity">
+
+        </activity>
+
+        <activity android:name=".PlayVideo.PlayVideoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
