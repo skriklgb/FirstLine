@@ -1,16 +1,11 @@
 package skrik.lgb.chapter_9.Service;
 
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
-
-import skrik.lgb.chapter_9.R;
-import skrik.lgb.chapter_9.Thread.MainActivity;
 
 public class MyService extends Service {
 
@@ -36,13 +31,7 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Notification notification = new Notification(R.mipmap.ic_launcher,"Notification comes", System. currentTimeMillis());
-        Intent notificationIntent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,notificationIntent, 0);
-        notification.setLatestEventInfo(this, "This is title", "This is content", pendingIntent);
-        startForeground(1, notification);
         Log.d("MyService", "onCreate executed");
-
     }
 
     @Override

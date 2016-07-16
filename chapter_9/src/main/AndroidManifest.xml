@@ -9,19 +9,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Thread.MainActivity">
-
         </activity>
 
         <service android:name=".Service.MyService">
         </service>
 
         <activity android:name=".Service.ServiceActivity">
+
+        </activity>
+        <activity android:name=".IntentService.IntentServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service android:name=".IntentService.MyIntentService">
+
+        </service>
+
     </application>
 
 </manifest>
