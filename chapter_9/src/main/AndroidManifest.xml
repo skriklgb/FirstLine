@@ -15,9 +15,15 @@
         </service>
 
         <activity android:name=".Service.ServiceActivity">
-
         </activity>
         <activity android:name=".IntentService.IntentServiceActivity">
+
+        </activity>
+
+        <service android:name=".IntentService.MyIntentService">
+        </service>
+
+        <activity android:name=".Alarm.AlarmActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -25,10 +31,12 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".IntentService.MyIntentService">
+        <service android:name=".Alarm.LongRunningService">
 
         </service>
+        <receiver android:name=".Alarm.AlarmReceiver">
 
+        </receiver>
     </application>
 
 </manifest>
