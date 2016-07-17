@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xmlpull.v1.XmlPullParser;
@@ -38,7 +41,8 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                  case SHOW_RESPONSE:
                      String response = (String) msg.obj;
 //                     parseXMLWithPull(response);
-                     parseXMLWithSAX(response );
+//                     parseXMLWithSAX(response );
+                     parseJSONWithJSONObject(response);
                      // 在这里进行UI操作，将结果显示到界面上
                      mResponse.setText(response);
                      break;
@@ -47,6 +51,23 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                  }
         }
     };
+
+    private void parseJSONWithJSONObject(String response) {
+        try {
+            JSONArray jsonArray = new JSONArray(response);
+            for (int i =0;i<jsonArray.length();i++){
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String id = jsonObject.getString("id");
+                String name = jsonObject.getString("name");
+                String version = jsonObject.getString("version");
+                Log.d("JSON解析","id is"+id);
+                Log.d("JSON解析","name is"+name);
+                Log.d("JSON解析","version is"+version);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void parseXMLWithSAX(String xmlData) {
         try {
@@ -154,7 +175,7 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 HttpURLConnection connection = null;
                 try {
-                    URL url = new URL("http://192.168.1.200/get_data.xml");
+                    URL url = new URL("http://192.168.1.200/get_data.json");
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
                     connection.setConnectTimeout(8000);
