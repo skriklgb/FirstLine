@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,9 +26,11 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import javax.xml.parsers.SAXParserFactory;
 
+import skrik.lgb.chapter_10.GSON.app;
 import skrik.lgb.chapter_10.R;
 import skrik.lgb.chapter_10.xml.ContentHandler;
 
@@ -42,7 +47,8 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                      String response = (String) msg.obj;
 //                     parseXMLWithPull(response);
 //                     parseXMLWithSAX(response );
-                     parseJSONWithJSONObject(response);
+//                     parseJSONWithJSONObject(response);
+                     parseJSONWithGSON(response);
                      // 在这里进行UI操作，将结果显示到界面上
                      mResponse.setText(response);
                      break;
@@ -51,6 +57,18 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                  }
         }
     };
+
+    private void parseJSONWithGSON(String jsonData) {
+        Gson gson = new Gson();
+        List<app> appList =gson.fromJson(jsonData,new TypeToken<List<app>>() {}.getType());
+        for (app app : appList){
+            Log.d("GSON解析","id is"+app.getId());
+            Log.d("GSON解析","name is"+app.getName());
+            Log.d("GSON解析","version is"+app.getVerson());
+
+        }
+
+    }
 
     private void parseJSONWithJSONObject(String response) {
         try {
