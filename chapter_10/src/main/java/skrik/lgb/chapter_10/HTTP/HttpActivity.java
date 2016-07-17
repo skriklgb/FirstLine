@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -19,7 +21,10 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.xml.parsers.SAXParserFactory;
+
 import skrik.lgb.chapter_10.R;
+import skrik.lgb.chapter_10.xml.ContentHandler;
 
 public class HttpActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -32,7 +37,8 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
             switch (msg.what){
                  case SHOW_RESPONSE:
                      String response = (String) msg.obj;
-                     parseXMLWithPull(response);
+//                     parseXMLWithPull(response);
+                     parseXMLWithSAX(response );
                      // 在这里进行UI操作，将结果显示到界面上
                      mResponse.setText(response);
                      break;
@@ -41,6 +47,20 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
                  }
         }
     };
+
+    private void parseXMLWithSAX(String xmlData) {
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            XMLReader xmlReader = factory.newSAXParser().getXMLReader();
+            ContentHandler handler = new ContentHandler();
+            // 将ContentHandler的实例设置到XMLReader中
+            xmlReader.setContentHandler(handler);
+            // 开始执行解析
+            xmlReader.parse(new InputSource(new StringReader(xmlData)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private void parseXMLWithPull(String response) {
         try {
